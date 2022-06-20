@@ -1,0 +1,377 @@
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	}
+
+#container{
+    width: 1450px;
+    height: 1020px;
+    background-color: rgb(230, 255, 223);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    /* #DASHBOARD# */
+
+
+
+
+        /* NAVBAR */
+#nav_bar{
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(102, 196, 255);
+}
+.nav_bar_button{
+    background-color: rgb(102, 196, 255);
+    display: flex;
+    align-items: center;
+}
+.nav_images{
+    background-color: rgb(102, 196, 255);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
+.add_a_job{
+    background-color: rgb(102, 196, 255);
+    text-decoration: none;
+    color: aliceblue;
+}
+.home{
+    background-color: rgb(102, 196, 255);
+    text-decoration: none;
+    color: aliceblue;
+}
+.logout{
+    background-color: rgb(102, 196, 255);
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+
+
+
+        /* TABLES */
+
+#table_container{
+    display: flex;
+    justify-content:end;
+}
+
+.table{
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(231, 231, 231, 0.878); 
+    overflow: hidden;
+    background-color: azure;
+    text-align: left;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.my_jobs_table{
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(231, 231, 231, 0.878); 
+    overflow: hidden;
+    background-color: azure;
+    text-align: left;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.thead{
+    box-shadow: 0 5px 10px rgba(231, 231, 231, 0.878);
+}
+
+.th{
+    width: 410px;
+    height: 40px;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: smaller;
+    font-weight: 900;
+}
+
+.td{
+    padding: 1rem 2rem;
+}
+
+tr:nth-child(even){
+    background-color: rgba(234, 234, 234, 0.76);
+}
+
+
+
+
+
+        /* REFERENCES/IMAGES */
+
+.references{
+    margin-top: 230px;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    /* LOGIN PAGE */
+
+
+
+
+        /* TOP BAR */
+
+#index_container{
+    width: 1450px;
+    height: 820px;
+    background-color: rgb(230, 255, 223);
+    display: flex;
+    display: inline-block;
+    justify-content: space-around;
+}
+
+#top_bar{
+    height: 100px;
+    width: 1410px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-left: 20px;
+    background-color: rgb(102, 196, 255);
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(151, 150, 150, 0.525);
+}
+
+.logo_image{
+    background-color: rgb(102, 196, 255);
+    width: 90px;
+    height: 90px;
+    background-size: contain;
+    margin-bottom: -110px;
+    margin-left: 360px
+}
+
+
+
+
+
+
+        /* BODY */
+
+#register_container{
+    width: 500px;
+    height: 400px;
+    margin-top: 30px;
+    margin-left: 40px;
+    padding-top: 10px;
+    padding-left: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(231, 231, 231, 0.878); 
+    overflow: hidden;
+    background-color: azure;
+    text-align: left;
+    display: inline-block;
+    font-size: large;
+}
+
+#login_container{
+    width: 500px;
+    height: 400px;
+    margin-left: 55px;
+    padding-top: 10px;
+    padding-left: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(231, 231, 231, 0.878); 
+    overflow: hidden;
+    background-color: azure;
+    text-align: left;
+    display: inline-block;
+    font-size: large;
+}
+
+.register_button{
+    margin-top: 60px;
+    background-color: rgb(102, 196, 255);
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(151, 150, 150, 0.525); 
+}
+.login_button{
+    margin-top: 140px;
+    background-color: rgb(102, 196, 255);
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(151, 150, 150, 0.525); 
+}
+.login{
+    font-size: x-large;
+}
+
+.create_profile{
+    font-size: x-large;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+                /* ADD_CHORE */
+
+    /* BODY */
+#add_a_job{
+    display: flex;
+    justify-content:end;
+}
+
+.add_job_container{
+    width: 600px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 40px;
+    padding-top: 10px;
+    padding-left: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(231, 231, 231, 0.878); 
+    overflow: hidden;
+    background-color: azure;
+    text-align: left;
+    display: inline-block;
+    font-size: large;
+}
+.add_a_job_button{
+    margin-top: 60px;
+    margin-left: 45px;
+    background-color: rgb(102, 196, 255);
+    width: 120px;
+    height: 30px;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(151, 150, 150, 0.525);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                /* VIEW  */
+
+.title{
+    margin-top: 20px;
+    font-size: x-large;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+/* .view_container{
+    width: 900px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 40px;
+    padding-top: 10px;
+    padding-left: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(231, 231, 231, 0.878); 
+    overflow: hidden;
+    background-color: azure;
+    text-align: left;
+    display: inline-block;
+    font-size: large;
+} */
+.view_table{
+    margin-top: 20px;
+    width: 700px;
+    height: 350px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(231, 231, 231, 0.878); 
+    overflow: hidden;
+    background-color: azure;
+    text-align: left;
+    display: inline-block;
+    margin-left: 10px;
+}
+.view_chore_text{
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.view_button{
+    margin-left: 35px;
+    margin-top: 100px;
+    background-color: rgb(102, 196, 255);
+    width: 125px;
+    height: 40px;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(151, 150, 150, 0.525)
+}
+
+.delete_button{
+    margin-left: 35px;
+    margin-top: 30px;
+    background-color: rgb(102, 196, 255);
+    width: 130px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(151, 150, 150, 0.525)
+}

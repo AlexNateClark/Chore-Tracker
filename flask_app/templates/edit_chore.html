@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">    
+    <title>Edit Job</title>
+</head>
+<body>
+    <container id="index_container">
+        <nav id="nav_bar">
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/home.png') }}" alt="add image"><a class="add_a_job" href="/dashboard">Home</a></button>
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/logout.png') }}" alt="add image"><a class="add_a_job" href="/logout">Signout</a></button>
+        </nav>
+        {% with messages = get_flashed_messages(category_filter=['chore']) %}
+            {% if messages %}  
+            <div role="alert">error</div>
+                    {% for message in messages %} 
+                    <p>{{message}}</p>
+                    {% endfor %} 
+            </div>
+            {% endif %} 
+        {% endwith %} 
+        <form action="/update/chore/{{chore.id}}" method='post'>
+            <input name="id" type="hidden" value="{{chore.id}}">
+            <div class="add_job_container">
+                <label for="job">Title:</label>
+                    <input type="text" name="job" value="{{chore.job}}">
+            </div>
+            
+            <div class="add_job_container">
+                <label for="description">Description:</label>
+                <input type="textarea" name="description" value="{{chore.description}}">
+                <!-- <textarea name="comment" cols="20" rows="1" placeholder="...."></textarea> -->
+            </div>
+            
+            <div class="add_job_container">
+                <label for="location">Location:</label>
+                    <input type="text" name="location" value="{{chore.location}}">
+            </div>
+            <br>
+            <br>
+            <input class="add_a_job_button" type="submit" value="Update">
+        </form>
+    </container>
+</body>
+</html>

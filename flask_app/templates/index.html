@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">    
+    <title>Login and Register</title>
+</head>
+<body>
+    <div id="index_container">
+        <img class="logo_image" src="{{ url_for('static', filename='img/logo.png') }}" alt="logo image">
+        <div id="top_bar">Welcome to Chores</div>
+        <form id="register_container" action="/register" method="post">
+            <h2 class="create_profile" >Create a Profile</h2>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div role="alert">Error
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <br>
+            <br>
+            <div>
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" placeholder="First Name...">
+            </div>
+            <br>
+            <div>
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" placeholder="Last Name...">
+            </div>
+            <br>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" name="email" placeholder="Email...">
+            </div>
+            <br>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Password...">
+            </div>
+            <br>
+            <div>
+                <label for="confirm">Confirm Password:</label>
+                <input type="password" name="confirm" placeholder="Confirm Password...">
+            </div>
+            <br>
+            <button class="register_button" type="submit" value="Register">Register</button>
+        </form>
+        
+        <form id="login_container" action="/login" method="post">
+            <h2 class="login" >Login</h2>
+            {% with messages = get_flashed_messages(category_filter=['login']) %}
+                {% if messages %}
+                <div role="alert">Error
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <br>
+            <br>
+            <br>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" name="email" placeholder="Email..." required>
+            </div>
+            <br>
+            <br>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Password..." required>
+            </div>
+            <br>
+            <input class="login_button" type="submit" value="Login">
+        </form>
+    </div>
+
+
+</body>
+</html>

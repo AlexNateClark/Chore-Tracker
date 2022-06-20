@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">    
+    <title>Dashboard</title>
+</head>
+<body>
+    <container id="container">
+        
+        
+        
+        <nav id="nav_bar">
+            <h1>Welcome, {{user.first_name}}</h1>
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/home.png') }}" alt="add image"><a class="add_a_job" href="/dashboard">Home</a></button>
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/add.png') }}" alt="add image"><a class="add_a_job" href="/add/chore">Add a Job</a></button>
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/logout.png') }}" alt="add image"><a class="add_a_job" href="/logout">Signout</a></button>
+        </nav>
+
+
+
+        <body id="table_container">
+            <table class="table">
+                <thead class="thead">
+                    <tr>
+                        <th class="th">Jobs Avaiable</th>
+                        <th class="th">Location</th>
+                        <th class="th">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for chore in chores %}
+                    <tr>
+                        <td class="td">{{chore.job}}</td>
+                        <td class="td">{{chore.location}}</td>
+                        <td class="td">
+                            <a href="/view/chore/{{chore.id}}">View</a>
+
+                    <!-- MAY HAVE TO CHANGE THIS WITH THE JOB TAKER ID -->
+                            <a href="/add/chore/{{chore.id}}">Add</a> 
+
+                            {% if chore.user_id == session.user_id %}
+                            <a href="/edit/chore/{{chore.id}}">Edit</a>
+                            <a href="/delete/chore/{{chore.id}}">Cancel</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+            <table class="my_jobs_table"> 
+                <thead class="thead">
+                    <tr>
+                        <th class="th">My Jobs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for chore in chores %}
+                    <tr>
+                        {% if chore.user_id == session.user_id %}
+                        <td class="td">{{chore.job}}</td>
+                        <td class="td">
+                            <a href="/view/chore/{{chore.id}}">View</a>
+                            <a href="/delete/chore/{{chore.id}}">Completed</a>
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="references">
+                <a target="_blank" href="https://icons8.com/icon/43725/cancel">Cancel</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                <a target="_blank" href="https://icons8.com/icon/SpuYztywr0Vl/plus-+">Plus +</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                <a target="_blank" href="https://icons8.com/icon/111280/news">News</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+            </div>
+        </body>
+    </container>
+</body>
+</html>

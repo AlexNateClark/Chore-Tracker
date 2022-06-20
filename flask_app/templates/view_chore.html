@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">    
+    <title>View Job</title>
+</head>
+<body>
+    <container id="index_container">
+        <nav id="nav_bar">
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/home.png') }}" alt="add image"><a class="add_a_job" href="/dashboard">Home</a></button>
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/logout.png') }}" alt="add image"><a class="add_a_job" href="/logout">Signout</a></button>
+        </nav>
+        <body class="view_container">
+            <form action="/add/chore" method="post" class="view_table">
+                {% with messages = get_flashed_messages() %} 
+                {% if messages %}
+                <div role="alert">error 
+                    {% for message in messages %} 
+                    <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+                <div class="title">Job: {{chore.job}}</div>
+                <div class="view_chore_text">Description: {{chore.description}}</div>
+                <div class="view_chore_text">Location: {{chore.location}}</div>
+                <div class="view_chore_text">Posted by: {{chore.user.first_name}}, {{chore.user.last_name}}</div>
+                <a class="delete_button" href="/delete/chore/{{chore.id}}">Cancel</a>
+                </div>
+            </form>
+        </body>
+    </container>
+</body>
+</html>

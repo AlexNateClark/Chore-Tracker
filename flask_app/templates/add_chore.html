@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">    
+    <title>Add a Job</title>
+</head>
+<body>
+    <container id="index_container">
+        
+        
+        <nav id="nav_bar">
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/home.png') }}" alt="add image"><a class="add_a_job" href="/dashboard">Home</a></button>
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/add.png') }}" alt="add image"><a class="add_a_job" href="/add/chore">Add a Job</a></button>
+            <button class="nav_bar_button"><img class="nav_images" src="{{ url_for('static', filename='img/logout.png') }}" alt="add image"><a class="add_a_job" href="/logout">Signout</a></button>
+        </nav>
+        
+        
+        <body id="add_a_job">
+            <form action="/create/chore" method="post">
+                {% with messages = get_flashed_messages() %} 
+                    {% if messages %}
+                    <div role="alert">error 
+                        {% for message in messages %} 
+                        <p>{{message}}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                {% endwith %}
+                <div class="add_job_container">
+                    <label for="job">Job:</label>
+                        <input type="text" name="job" placeholder="....">
+                </div>
+                
+                <div class="add_job_container">
+                    <label for="description">Description:</label>
+                    <textarea name="description" cols="20" rows="1" placeholder="...."></textarea>
+                </div>
+                
+                <div class="add_job_container">
+                    <label for="location">Location:</label>
+                        <input type="text" name="location" placeholder="....">
+                </div>
+                <br>
+                <br>
+                <input class="add_a_job_button" type="submit" value="Submit">
+            </form>
+        
+        </body>
+    </container>
+</body>
+</html>
